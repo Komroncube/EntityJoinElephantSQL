@@ -12,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<DemoDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString"))
+    options.UseNpgsql(builder.Configuration.GetConnectionString("ConnectionString"))
 );
 builder.Services.AddControllersWithViews()
     .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
